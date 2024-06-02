@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { orderSubProduct } from "../../../components/index";
+import { OrderSubProduct } from "../../../components/index";
 import { dateFormate, indianRupeesFormate } from '../../../methods';
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast"
@@ -116,7 +116,7 @@ function SubOrder({ val }) {
             {
                 val?.orders?.products?.map((ele, id) => {
                     return (
-                        <orderSubProduct object={ele} key={id} />
+                        <OrderSubProduct object={ele} key={id} />
                     );
                 })
             }

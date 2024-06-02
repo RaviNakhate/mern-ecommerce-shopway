@@ -15,13 +15,14 @@ function Products() {
 
 
 
-  const loadMore = () => {
+  const loadMore = async () => {
     if (totalProducts === data.length) {
       setBtnDisplay(false);
     }
     else {
-      setSkip((prevSkip) => prevSkip + limit);
-      setLimit((prevLimit) => prevLimit);
+      await setSkip((prevSkip) => prevSkip + limit);
+      await setLimit((prevLimit) => prevLimit);
+      await listProductApi()
     }
   }
 
@@ -32,9 +33,8 @@ function Products() {
       return 0;
     };
 
-    setIsLoading(true);
+
     const res = await listProduct({ skip, limit });
-    setIsLoading(false);
 
     if (res?.status) {
       setTotalProducts(res?.data?.totalProducts);
@@ -48,8 +48,14 @@ function Products() {
 
 
   useEffect(() => {
-    listProductApi();
-  }, [skip, limit])
+    const tempFun = async () => {
+      await setIsLoading(true);
+      await listProductApi();
+      await setIsLoading(false);
+    }
+
+    tempFun();
+  }, [])
 
   return (
     <div className='list-product-container'>
