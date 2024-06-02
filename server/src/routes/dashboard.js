@@ -78,14 +78,14 @@ router.get('/', auth, async (req, res) => {
                 color: "salmon"
             },
             {
-                key: "Total Fail Orders",
+                key: "Total Process Orders",
                 value: totalProcessOrders[0]?.size ?? 0,
-                color: "#fd5959"
+                color: "#00bbf0"
             },
             {
-                key: "Total Process Orders",
+                key: "Total Fail Orders",
                 value: totalFailOrders[0]?.size ?? 0,
-                color: "#00bbf0"
+                color: "#fd5959"
             },
             {
                 key: "Total Confirm Orders",
