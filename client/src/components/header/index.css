@@ -1,0 +1,242 @@
+.nav {
+    padding-top: 0.5%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.nav-logo {
+    margin-left: 10px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.search-input-list-container {
+    position: relative;
+    width: 80%;
+}
+
+.search-input {
+    border-radius: 3px;
+    padding: 7px 10px;
+    width: 100%;
+    background-color: #F0F8FF;
+    border: 0.5px solid rgb(180, 177, 177);
+    font-family: system-ui;
+    font-size: small;
+    outline: 0;
+    font-weight: 400;
+    margin-left: 30px;
+}
+
+.search-list-content {
+    background: white;
+    min-width: 95%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+    margin-left: 30px;
+    height: fit-content;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.search-product-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.searchlist-product-img {
+    width: 80px;
+    margin: 5px 10px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.search-product-title {
+    width: 100%;
+    text-align: center;
+}
+
+.search-category-container {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.nav-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.nav-btn {
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 5px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 20px;
+    text-align: center;
+}
+
+.category-side-container,
+.profile-side-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.category-side-btn,
+.profile-side-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+
+.category-side-content,
+.profile-side-content {
+    background: white;
+    min-width: 150px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.category-side-content button,
+.profile-side-content button {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    text-align: start;
+}
+
+.category-side-content button:hover,
+.profile-side-content button:hover {
+    color: blue;
+    background: #f1f1f1;
+}
+
+
+
+@media (max-width:600px) {
+    .nav-logo {
+        height: 25px;
+        margin: 5px;
+    }
+
+    .search-input-list-container {
+        width: 100%;
+        position: static;
+    }
+    .search-list-content {
+        padding: 5px;
+        position: absolute;
+        left: 0px;
+        margin: 0px;
+        margin-left: 2%;
+        max-width: 90%;
+    }
+
+    .nav-search {
+        margin: 5px;
+        font-size: small;
+        width: 95%;
+    }
+}
+
+@media (max-width:1024px) {
+    .nav {
+        display: block;
+        width: 100%;
+    }
+    .nav-left {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .nav-logo {
+        height: 30px;
+    }
+    .search-input {
+        margin-left: 0px;
+    }
+
+    ::-webkit-scrollbar {
+        width: auto ;
+        height: 2em
+    }
+    ::-webkit-scrollbar-track-piece {
+        background: #eee
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888
+    }​ 
+
+    .category-side-container {
+        border: 1px solid red;
+    }
+
+    .nav-btn-container {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 70%;
+        margin-top: 10px;
+    }
+    .nav-right {
+        align-items: center;
+    }
+    .nav-btn-mobile {
+        
+        width: 50%; 
+        cursor: pointer;
+        outline: 0;
+        font-weight: 400;
+        text-align: center;
+        background-color: transparent;
+        border-radius: .25rem;
+        color: #2ea44f;
+        border-color: #2ea44f;
+    
+    }
+    .nav-btn-mobile:hover {
+        color: #fff;
+        background-color: #2ea44f;
+        border-color: #2ea44f;
+    }
+}
+
+@media (max-width:300px) {
+    .nav-btn-container {
+        width: 100%;
+    }
+}

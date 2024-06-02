@@ -1,0 +1,32 @@
+.label-container-feature {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+
+}
+.label-container-feature img {
+    width: 30%;
+}
+.books-banner {
+    width: 100%;
+    object-fit: contain;
+    padding: 0px 15px;
+}
+
+
+
+@media (max-width:600px) {
+    .books-banner {
+        transform: scaleX(1.6) scaleY(1.6);
+        padding: 0px;
+    }
+    .label-container-feature {
+        justify-content: center;
+    }
+    .label-container-feature img {
+        width: auto;
+    }
+    
+}

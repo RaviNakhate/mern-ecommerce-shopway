@@ -1,0 +1,31 @@
+.add-product-container {
+    padding: 2%;
+    width: 80%;
+}
+.add-product-table {
+    width: 100%;
+}
+
+.title-product {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.input-product1,
+.input-product2 {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    resize: none;
+    min-width: 200px;
+    margin-right: 5px;
+}
+.input-product1 {
+    width: 80%;
+}
+
+.input-product:focus,
+.input-product2:focus {
+    outline: none;
+}

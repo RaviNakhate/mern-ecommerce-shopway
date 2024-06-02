@@ -1,0 +1,36 @@
+.list-product-container {
+    padding: 2%;
+    width: 80%;
+}
+.list-product-table {
+    width: 100%;
+    border: 1px solid grey;
+    text-align: center;
+}
+.list-product-table > tbody > tr > th,
+.list-product-table > tbody > tr > td {
+    border: 1px solid grey;
+}
+
+.table-product-img {
+ /*    width: 200px; */
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.view-product-btn {
+    color: green;
+}
+.edit-product-btn {
+    color: blue;
+}
+.delete-product-btn {
+    color: red;
+}
+.delete-background {
+    background: rgba(255, 0, 0, 0.377);
+}
+
+.delete-background,
+.active-delete {
+    cursor: not-allowed;
+}

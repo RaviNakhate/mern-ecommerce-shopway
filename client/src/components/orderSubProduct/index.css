@@ -1,0 +1,29 @@
+.order-subproduct-list-container {
+}
+.order-subproduct-container {
+    display: flex;
+    margin: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.order-subproduct-img {
+    width: 100px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    padding: 5px;
+}
+.order-subproduct-title-container {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.order-subproduct-title-container > div {
+    font-weight: 500;
+    font-size: small;
+    margin-top: 10px;
+}
+.order-subproduct-title-container > div:nth-child(2) {
+    font-size: medium;
+    font-weight: 600;
+}
