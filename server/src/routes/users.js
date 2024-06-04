@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const { auth } = require('../middleware/index');
 const { sendOtp, register, updateProfile } = require('../validation/index');
 const validation = require('../validation/validation');
-const { sendMail, isOtpExpire, createHash, checkHash } = require('../methods/index');
+const { sendMail, isOtpExpire, generateOtp, createHash, checkHash } = require('../methods/index');
 
 
 router.post('/', validation(sendOtp), async (req, res) => {
