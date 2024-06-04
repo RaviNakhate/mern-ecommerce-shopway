@@ -14,43 +14,42 @@
 
 ## 🚀 Client Features
 
-### User Account Management
+#### User Account Management
 
-Register: 🚪 Users can create an account and receive email notifications for otp verification.
-Login: 🚪 Users can login account by email and password.
-Update Profile: 🔐 Users can update their profile information
+- Register: 🚪 Users can create an account and receive email notifications for otp verification.
+- Login: 🚪 Users can login account by email and password.
+- Update Profile: 🔐 Users can update their profile information.
 
-### Shopping Cart
+#### Shopping Cart
 
-Add/Remove Items: 🛒 Users can add items to their shopping cart or remove them as needed.
-Update Quantities: 🔢 Quantities of items in the cart can be adjusted.
+- Add/Remove Items: 🛒 Users can add items to their shopping cart or remove them as needed.
+- Update Quantities: 🔢 Quantities of items in the cart can be adjusted.
 
-### Product Browsing
+#### Product Browsing
 
-Navigate: 🔍 User can navigate page by categories list.
-Load more: 📚 Products are load more, with 12 products displayed per page by default.
-Search: 🔍 Users can search for products.
-Filters: 🎛️ Products can be filtered based on categories, ratings, and price range.
+- Navigate: 🔍 User can navigate page by categories list.
+- Load more: 📚 Products are load more, with 12 products displayed per page by default.
+- Search: 🔍 Users can search for products.
+- Filters: 🎛️ Products can be filtered based on categories, ratings, and price range.
 
-### Checkout Process
+#### Checkout Process
 
-Shipping Info: 🚚 Shipping information is stored profile section for ease of checkout.
-Payment Options: 💳 Users can pay through Paytm payment gateway for checkout.
+- Shipping Info: 🚚 Shipping information is stored profile section for ease of checkout.
+- Payment Options: 💳 Users can pay through Paytm payment gateway for checkout.
 
-### Order Management
+#### Order Management
 
-My Orders: 📦 Users can view their order history.
-Order Details: ℹ️ Details of all ordered items are accessible.
-Order Confirmation: ✉️ Users receive email notifications with comprehensive order details upon placing an order.
-Product Interaction
+- My Orders: 📦 Users can view their order history.
+- Order Details: ℹ️ Details of all ordered items are accessible.
+- Order Confirmation: ✉️ Users receive email notifications with comprehensive order details upon placing an order.
 
 ## 🚀 Admin Features
 
-Dashboard: 🖥️ Admins have access to a dedicated dashboard where check total users, products, order with status, sales, profit margin and profit
-Order Management: 📊 Admins can view's and update order status's.
-Product Management: 📝 Admins can add/update/delete products.
+- Dashboard: 🖥️ Admins have access to a dedicated dashboard where check total users, products, order with status, sales, profit margin and profit.
+- Order Management: 📊 Admins can view's and update order status's.
+- Product Management: 📝 Admins can add/update/delete products.
 
-### 📸 Screenshot of Admin Page's 🙈 :
+#### 📸 Screenshot of Admin Page's 🙈 :
 <table>
   <tr>
     <td><img src="https://github.com/RaviNakhate/mern-ecommerce-shopway/assets/105623079/efbea3c2-2678-4bc6-b471-ce75ea678d68" alt="dashboard"/></td>
