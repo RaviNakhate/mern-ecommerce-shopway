@@ -8,7 +8,8 @@ import {
   Product,
   Profile,
   Register,
-  Search
+  Search,
+  Forgot
 } from "./views/cilent/index.js";
 import {
   Dashboard,
@@ -34,6 +35,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/register' element={<Register />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/forgot' element={<Forgot />} />
         <Route path='/admin' element={<Menu />}>
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='products' element={<Products />} />

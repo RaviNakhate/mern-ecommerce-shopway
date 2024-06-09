@@ -6,6 +6,7 @@ import Product from "./product/product";
 import Profile from "./profile/profile";
 import Login from "./login/login";
 import Search from "./search/search";
+import Forgot from "./forgot/forgot"
 
 export {
     Cart,
@@ -16,4 +17,5 @@ export {
     Profile,
     Register,
     Search,
+    Forgot
 };

@@ -41,6 +41,22 @@ const register = async (body) => {
     return err;
   }
 };
+const forgotOtp = async (body) => {
+  try {
+    const { data } = await axiosInstance.post("/user/forgot", body);
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
+const forgotPassword = async (body) => {
+  try {
+    const { data } = await axiosInstance.put("/user/forgot", body);
+    return data;
+  } catch (err) {
+    return err;
+  }
+};
 const details = async () => {
   try {
     const id = localStorage.getItem('id');
@@ -237,6 +253,8 @@ export {
   login,
   sendOtp,
   register,
+  forgotOtp,
+  forgotPassword,
   details,
   addProduct,
   listProduct,

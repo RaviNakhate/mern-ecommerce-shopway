@@ -3,7 +3,25 @@ const router = express.Router();
 const Razorpay = require('razorpay');
 const { auth } = require('../middleware/index');
 const Order = require('../schema/order');
-const Cart = require('../schema/cart')
+const Cart = require('../schema/cart');
+const User = require('../schema/user')
+const { sendMail } = require('../methods/index')
+
+
+const title = "Shopway - Order Confirmation";
+const text = (name,orderId, paymentId) => {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+
+  return `Hello ${name},\nYour order on Shopway has been confirmed.\n\nOrder ID :  ${orderId}\n\nPayment Id :  ${paymentId}\n\nOrder Date :  ${formattedDate}\n\nThank you for shopping with us!`;
+};
 
 
 const createOrder = async ({ amount, products, _id }) => {
@@ -95,6 +113,8 @@ router.patch('/', auth, async (req, res) => {
       order.paymentId = paymentId;
       await result.save();
 
+      const { name, email } = await User.findOne({ _id: id });
+      await sendMail(email, title, text(name,orderId,paymentId));
       res.status(200).send({ status: true, message: "Order updated successfully", });
       return 0;
     }
@@ -102,6 +122,7 @@ router.patch('/', auth, async (req, res) => {
     res.status(200).send({ message: "Order not found" });
 
   } catch (err) {
+    console.log(err);
     res.status(200).send({ message: "Network Error" });
   }
 });
@@ -124,7 +145,7 @@ router.patch('/confirm', auth, async (req, res) => {
       order.orderComplete = new Date();
       await result.save();
 
-      res.status(200).send({ status: true, message: "Order updated successfully", data : order });
+      res.status(200).send({ status: true, message: "Order updated successfully", data: order });
       return 0;
     }
 
@@ -146,7 +167,7 @@ router.get('/', auth, async (req, res) => {
     const result = await Order.findOne({ userId: id });
 
     if (result) {
-      const array = await result.orders.reverse().slice(skip, skip===0 ? limit : (skip+limit));
+      const array = await result.orders.reverse().slice(skip, skip === 0 ? limit : (skip + limit));
 
       res.status(200).send({ status: true, message: "Order's list", data: { array, size: result.orders.length } });
       return 0;
@@ -200,12 +221,12 @@ router.get('/list', auth, async (req, res) => {
 
 
     const result = await Order.aggregate(pipeline);
-    const data = {...result};
+    const data = { ...result };
     data.array = data[0]?.array;
-    data.size = data[0]?.size[0]?.count?? 0;
+    data.size = data[0]?.size[0]?.count ?? 0;
     delete data[0];
 
-    res.status(200).send({ status: true,  message: "ok", data });
+    res.status(200).send({ status: true, message: "ok", data });
   } catch (err) {
     console.log(err);
     res.status(200).send({ message: "Network Error" });

@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading,setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const loginApi = async () => {
@@ -33,15 +33,15 @@ function Login() {
       localStorage.setItem("user", res.data.user);
       dispatch({ type: 'userUpdate', payload: res.data });
 
-      await res?.data?.user === "client" ? navigate('/'): navigate('/admin/dashboard');
+      await res?.data?.user === "client" ? navigate('/') : navigate('/admin/dashboard');
     }
     else { toast.error(res.message) }
   }
 
-  
+
   const authApi = async () => {
     if (!localStorage.getItem('token') && !localStorage.getItem('id') && !localStorage.getItem('user')) return 0;
-    
+
     const user = localStorage.getItem('user');
     const res = await details();
 
@@ -84,12 +84,15 @@ function Login() {
 
         <div className="login-btn-container">
           <button className='nav-btn' onClick={() => loginApi()}>
-          {isLoading?'Loading...':'Login'} 
+            {isLoading ? 'Loading...' : 'Login'}
           </button>
         </div>
         <div style={{ marginTop: '55px', textAlign: "center" }}>
           <label style={{ color: "grey" }}>New to Shopway ? </label>
-          <button style={{ color: "blue" }} onClick={() => navigate('/register')}>Create an account</button>
+          <button style={{ color: "blue" }} onClick={() => navigate('/register')}> Create an account</button>
+          <br></br>
+          <label style={{ color: "grey" }}>Forgot Password ? </label>
+          <button style={{ color: "blue" }} onClick={() => navigate('/forgot')}> Reset it</button>
         </div>
 
       </div>
