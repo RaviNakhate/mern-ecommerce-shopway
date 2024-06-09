@@ -18,6 +18,7 @@
 
 - Register: 🚪 Users can create an account and receive email notifications for otp verification.
 - Login: 🚪 Users can login account by email and password.
+- Forgot: 🚪 Users can forgot password by email and receive email notifications for otp verification.
 - Update Profile: 🔐 Users can update their profile information.
 
 #### Shopping Cart
@@ -41,7 +42,7 @@
 
 - My Orders: 📦 Users can view their order history.
 - Order Details: ℹ️ Details of all ordered items are accessible.
-- Order Confirmation: ✉️ Users receive email notifications with comprehensive order details upon placing an order.
+- Order Confirmation: ✉️ Users receive email notifications with order details upon placing an order.
 
 ## 🚀 Admin Features
 
