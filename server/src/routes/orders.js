@@ -10,17 +10,7 @@ const { sendMail } = require('../methods/index')
 
 const title = "Shopway - Order Confirmation";
 const text = (name,orderId, paymentId) => {
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleString('en-US', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
-
-  return `Hello ${name},\nYour order on Shopway has been confirmed.\n\nOrder ID :  ${orderId}\n\nPayment Id :  ${paymentId}\n\nOrder Date :  ${formattedDate}\n\nThank you for shopping with us!`;
+  return `Hello ${name},\nYour order on Shopway has been confirmed.\n\nOrder ID :  ${orderId}\n\nPayment Id :  ${paymentId}\n\nThank you for using Shopway!\n\nBest regards,\nThe Shopway Team`;
 };
 
 
